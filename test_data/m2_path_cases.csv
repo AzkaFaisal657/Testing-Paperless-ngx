@@ -1,0 +1,9 @@
+case_id,path,expected
+EP-01,invoice.pdf,inside
+EP-02,2026/invoice.pdf,inside
+EP-03,2026/October/invoice.pdf,inside
+BVA-01,.,inside
+BVA-02,..,outside
+BVA-03,../invoice.pdf,outside
+BVA-04,2026/../../invoice.pdf,outside
+BVA-05,/tmp/outside.pdf,outside

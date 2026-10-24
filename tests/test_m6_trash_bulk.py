@@ -35,9 +35,7 @@ def test_restore_archive_serial_numbers_uses_every_backup_entry(
 
 
 @pytest.mark.trash_bulk
-def test_restore_archive_serial_numbers_restores_null_asn(
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
+def test_restore_archive_serial_numbers_restores_null_asn(monkeypatch) -> None:
     objects = Mock()
     monkeypatch.setattr(bulk_edit.Document, "objects", objects)
 
@@ -50,9 +48,7 @@ def test_restore_archive_serial_numbers_restores_null_asn(
 
 
 @pytest.mark.trash_bulk
-def test_restore_archive_serial_numbers_restores_numeric_asn(
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
+def test_restore_archive_serial_numbers_restores_numeric_asn(monkeypatch) -> None:
     objects = Mock()
     monkeypatch.setattr(bulk_edit.Document, "objects", objects)
 

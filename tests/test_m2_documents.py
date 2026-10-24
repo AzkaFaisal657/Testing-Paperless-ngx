@@ -13,16 +13,15 @@ def _path_cases() -> list[tuple[str, str, str]]:
     csv_path = Path(__file__).parents[1] / "test_data" / "m2_path_cases.csv"
     with csv_path.open(newline="", encoding="utf-8") as stream:
         return [
-            (row["case_id"], row["path"], row["expected"])
+            (row["path"], row["expected"])
             for row in csv.DictReader(stream)
         ]
 
 
 @pytest.mark.documents
-@pytest.mark.parametrize(("case_id", "path", "expected"), _path_cases())
+@pytest.mark.parametrize(("path", "expected"), _path_cases())
 def test_document_path_boundary_cases(
     tmp_path: Path,
-    case_id: str,
     path: str,
     expected: str,
 ) -> None:

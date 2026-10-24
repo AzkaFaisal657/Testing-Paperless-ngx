@@ -1,0 +1,23 @@
+[project]
+name = "paperless-ngx-assignment-3-tests"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+test = [
+  "pytest>=8.0",
+  "pytest-django>=4.8",
+  "pytest-order>=1.2",
+  "pytest-xdist>=3.5",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+DJANGO_SETTINGS_MODULE = "paperless.settings"
+markers = [
+  "auth: M1 Auth & Users tests",
+  "documents: M2 Documents tests",
+  "trash_bulk: M6 Trash & Bulk Actions tests",
+]

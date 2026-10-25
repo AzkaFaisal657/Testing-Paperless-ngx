@@ -1,0 +1,7 @@
+case_id,present,authorization,expected
+AUTH-01,true,Basic dXNlcjpwYXNz,"Basic realm=""api"""
+AUTH-02,true,basic dXNlcjpwYXNz,"Basic realm=""api"""
+AUTH-03,true,Bearer token,Token
+AUTH-04,true,******,Token
+AUTH-05,true,,Token
+AUTH-06,false,,Token

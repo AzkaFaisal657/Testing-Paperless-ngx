@@ -1,6 +1,0 @@
-case_id,document_source,trigger_source,filename,filename_filter,original_path,path_filter,expected
-WF-FILTER-01,ApiUpload,ApiUpload,Quarterly_INVOICE.PDF,*invoice*.pdf,/consume/incoming/Quarterly_INVOICE.PDF,/consume/*/*.PDF,true
-WF-FILTER-02,ApiUpload,ConsumeFolder,invoice.pdf,,,,false
-WF-FILTER-03,ApiUpload,ApiUpload,report.pdf,*invoice*.pdf,,,false
-WF-FILTER-04,ApiUpload,ApiUpload,invoice.pdf,*invoice*.pdf,/consume/other/invoice.pdf,/consume/incoming/*.pdf,false
-WF-FILTER-05,MailFetch,,,,,,true

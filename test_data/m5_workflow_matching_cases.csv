@@ -1,0 +1,9 @@
+case_id,algorithm,pattern,content,is_insensitive,expected
+WF-MATCH-01,any,invoice overdue,invoice received,false,true
+WF-MATCH-02,any,invoice overdue,Payment received,false,false
+WF-MATCH-03,all,invoice overdue,invoice is overdue,false,true
+WF-MATCH-04,all,invoice overdue,invoice is paid,false,false
+WF-MATCH-05,literal,total due,The total due is 12,false,true
+WF-MATCH-06,regex,INV-[0-9]{4},Reference INV-2026,false,true
+WF-MATCH-07,literal,invoice,Invoice attached,false,false
+WF-MATCH-08,literal,invoice,Invoice attached,true,true

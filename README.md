@@ -26,47 +26,46 @@ Assignment 3 requires the group to:
 
 ### Assigned unit-test modules
 
-This contribution covers:
+The group test suite is split across the following modules:
 
-- **M1 — Auth & Users**
-- **M2 — Documents**
-- **M6 — Trash & Bulk Actions**
+- **M1 — Auth & Users** — `tests/test_m1_auth.py`
+- **M2 — Documents** — `tests/test_m2_documents.py`
+- **M3 — Attributes** — `tests/test_m3_attributes.py`
+- **M4 — Search & Saved Views** — contributed by the other team member
+- **M5 — Workflows & Matching** — `tests/test_m5_workflows.py`
+- **M6 — Trash & Bulk Actions** — `tests/test_m6_trash_bulk.py`
 
-The tests are located in:
-
-- `tests/test_m1_auth.py`
-- `tests/test_m2_documents.py`
-- `tests/test_m6_trash_bulk.py`
+This contribution adds M1, M3, and M5 tests. M2, M4, and M6 are owned by the
+other team member.
 
 ### Test automation completed
 
-- Parameterized authentication tests.
+- CSV-driven authentication challenge and MFA tests.
+- Custom-field type validation tests.
+- Workflow matching algorithm and consumption-filter tests.
 - CSV-driven document path tests.
 - Trash and bulk-action tests using simple mocked update calls.
-- ECP and BVA design notes.
+- ECP and BVA design notes for each contribution.
 - Separate pytest markers for each module.
 - Parallel test execution configuration.
 - Beginner-friendly viva notes.
-
-The current automated suite contains 22 tests. The suite has been verified to
-pass in both normal and parallel execution.
 
 ### Documentation and evidence completed
 
 - `docs/Paperless_Test_Workbook.xlsx`
 - `docs/azka_test_design.md`
+- `docs/musferah_test_design.md`
+- `docs/musferah_test_cases.xlsx`
 - `docs/azka_viva_notes.md`
-- `test_data/m2_path_cases.csv`
+- CSV test data in `test_data/`
 - Test configuration files and execution instructions.
 
-## Work still to be added
+## Final group-level checks
 
-- Partner's unit tests for her assigned modules.
-- Recorded setup video.
-- Any final group-level summary report or contribution updates required by the
-  instructor.
-- Final review of all test cases, documentation, and naming consistency.
-- Final public-repository check before submitting the repository link on GCR.
+- Complete any group-level summary report or contribution updates required by
+  the instructor.
+- Review all test cases, documentation, and naming consistency together.
+- Verify the public repository before submitting its link on GCR.
 
 ## Running the tests
 
@@ -89,7 +88,9 @@ Run an individual module:
 
 ```powershell
 uv run pytest -m auth
+uv run pytest -m attributes
 uv run pytest -m documents
+uv run pytest -m workflows
 uv run pytest -m trash_bulk
 ```
 
@@ -99,5 +100,4 @@ Run tests in parallel:
 uv run pytest -n auto
 ```
 
-Test data for the document suite is stored in
-`test_data/m2_path_cases.csv`.
+The module-specific CSV inputs are stored in `test_data/`.
